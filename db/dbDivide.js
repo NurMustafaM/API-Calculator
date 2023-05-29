@@ -10,12 +10,18 @@ const connectToMongo = async () => {
 };
 
 const insertOperation = async (operand1, operand2, resultOperands) => {
+  let client;
+
   try {
+
+    ({client} = await connectToMongo());
     
+    const collection = client.db(dbName).collection(collectionName);
+
     const operation = {
-      operand1,
-      operand2,
-      resultOperands,
+      operand1: operand1,
+      operand2: operand2,
+      resultOperands: resultOperands,
       operation: 'divide',
     };
 
