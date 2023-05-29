@@ -1,8 +1,6 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient } = require ('mongodb');
+const { mongoURL, dbName, collectionName } = require ('../configDB/addConfig');
 
-const mongoURL = 'mongodb://localhost:27017';
-const dbName = 'Operations';
-const collectionName = 'Soma';
 
 const connectToMongo = async () => {
   const client = await MongoClient.connect(mongoURL);
@@ -13,23 +11,22 @@ const connectToMongo = async () => {
 
 const insertOperation = async (operand1, operand2, resultOperands) => {
   try {
-    const { client, collection } = await connectToMongo();
 
     const operation = {
       operand1,
       operand2,
       resultOperands,
-      operation: 'add'
+      operation: 'add',
     };
 
     await collection.insertOne(operation);
-
-    client.close();
   } catch (error) {
-    throw new Error('Erro ao armazenar no banco de dados');
+    throw new Error ('Erro ao armazenar no banco de dados');
+  } finally {
+    client.close();
   }
 };
 
 module.exports = {
-  insertOperation
+  insertOperation,
 };
