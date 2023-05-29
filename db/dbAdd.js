@@ -31,6 +31,7 @@ const insertOperation = async (operand1, operand2, resultOperands) => {
   } finally {
     client.close();
   }
+  
 };
 
 module.exports = {
