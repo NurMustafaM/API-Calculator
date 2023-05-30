@@ -22,7 +22,7 @@ const insertOperation = async (operand1, operand2, resultOperands) => {
       operand1: operand1,
       operand2: operand2,
       resultOperands: resultOperands,
-      operation: 'add',
+      operation: 'Add',
     };
 
     await collection.insertOne(operation);

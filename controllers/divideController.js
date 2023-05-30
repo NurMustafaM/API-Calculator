@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
     if (error.message === "Infinity") {
       return res.status(400).json({
         result: false,
-        message: "DEU ERRO! O resultado da divisão é infinito",
+        message: `DEU ERRO! O resultado da divisão é ${result}`,
       });
     }
     res.status(500).json({
