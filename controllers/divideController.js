@@ -1,4 +1,4 @@
-const { insertOperation } = require("../db/dbDivide");
+const Divide = require("../models/divideModel");
 
 module.exports = async (req, res) => {
   const a = parseFloat(req.params.a);
@@ -11,11 +11,9 @@ module.exports = async (req, res) => {
     });
   }
 
-  const result = a / b;
-
   try {
-    await insertOperation(a, b, result);
-
+    const result = await Divide.divide(a, b);
+    
     if (!isFinite(result)) {
       throw new Error("Infinity");
     }

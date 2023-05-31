@@ -8,7 +8,6 @@ const divideRoute = require('./routes/divideRoute');
 const app = express();
 app.use(bodyParser.json());
 
-
 const port = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
