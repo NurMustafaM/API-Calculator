@@ -30,6 +30,7 @@ module.exports = async (req, res) => {
         result: false,
         message: `DEU ERRO! O resultado da divisão é ${result}`,
       });
+      
     }
     res.status(500).json({
       result: false,

@@ -24,6 +24,7 @@ const insertOperation = async (operand1, operand2, resultOperands) => {
       resultOperands: resultOperands,
       operation: 'Multiply',
     };
+    
 
     await collection.insertOne(operation);
   } catch (error) {
