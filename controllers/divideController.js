@@ -19,8 +19,8 @@ module.exports = async (req, res) => {
     }
 
     res.json({
-      result: true,
-      message: `Deu tudo certo na divisão!! A divisão de ${a} / ${b} = ${result}`,
+      result: result,
+      message: "ok"
     });
   } catch (error) {
     if (error.message === "Infinity") {

@@ -12,11 +12,11 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const result = await multiply(a, b);
+    const result = await Multiply.multiply(a, b);
 
     res.json({
-      result: true,
-      message: `Deu tudo certo na multiplicação!! A multiplicação de ${a} x ${b} = ${result}`
+      result: result,
+      message: "ok"
     });
   } catch (error) {
     res.status(500).json({

@@ -15,8 +15,8 @@ module.exports = async (req, res) => {
     const result = await Add.add(a, b);
 
     res.json({
-      result: true,
-      message: `Deu tudo certo na soma!! A soma de ${a} + ${b} = ${result}`
+      result: result,
+      message: "ok"
     });
   } catch (error) {
     res.status(500).json({

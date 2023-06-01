@@ -12,11 +12,11 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const result = await subtract(a, b);
+    const result = await Subtract.subtract(a, b);
 
     res.json({
-      result: true,
-      message: `Deu tudo certo na subtração!! A subtração de ${a} - ${b} = ${result}`
+      result: result,
+      message: "ok"
     });
   } catch (error) {
     res.status(500).json({
