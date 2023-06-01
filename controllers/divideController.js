@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
       message: "DEU ERRO! O primeiro e o segundo operando deve ser um número",
     });
   }
-
+let result;
   try {
     const result = await Divide.divide(a, b);
     
