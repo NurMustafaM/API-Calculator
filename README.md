@@ -1,10 +1,10 @@
 # Calculadora API 
 
-Este é um projeto de uma calculadora API que permite aos usuários realizar operações matemáticas simples pelo endpoint, como adição, subtração, multiplicação e divisão. A API foi desenvolvida utilizando o framework Express.js em Node.js e MongoDB.
+Neste projeto, uma calculadora API em que os usuários podem usar o endpoint para realizar operações matemáticas básicas, como adição, subtração, multiplicação e divisão. O Express foi utilizado no desenvolvimento da API em Node.js e MongoDB.
 
 ## Funcionalidades 
 
-A calculadora API oferece as seguintes funcionalidades: 
+Essas funções estão disponíveis com a calculadora API: 
 
 1.Rota para adicionar dois números: `/add/:a/:b`
 
@@ -31,13 +31,13 @@ Cada rota retorna o resultado da operação realizada.
 Caso precise de ajuda ou tenha alguma dúvida sobre o projeto, você pode encontrar informações adicionais nos seguintes recursos:
 
 1. Documentação do Express.js: https://expressjs.com/
-2. Documentação do Node.js: https://nodejs.org/
-3. Documentação do MongoDB: https://www.mongodb.com/docs/
+2. Sites de documentação do código: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/isFinite, https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment, 
+3. Sites de documentação do Node.js: https://nodejs.org/
+4. Sites de documentação do MongoDB: https://www.mongodb.com/docs/
 
 
 ## Autora: 
 
 Nor Mustafa Mohamad
 
-
-Sinta-se à vontade para entrar em contato comigo caso tenha alguma pergunta ou feedback sobre o projeto.
+Convido você a entrar em contato comigo se tiver alguma dúvida ou sugestão para o projeto
