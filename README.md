@@ -31,7 +31,7 @@ Cada rota retorna o resultado da operação realizada.
 Caso precise de ajuda ou tenha alguma dúvida sobre o projeto, você pode encontrar informações adicionais nos seguintes recursos:
 
 1. Documentação do Express.js: https://expressjs.com/
-2. Sites de documentação do código: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/isFinite 
+2. Sites de documentação do código: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/isFinite, https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment, 
 3. Sites de documentação do Node.js: https://nodejs.org/
 4. Sites de documentação do MongoDB: https://www.mongodb.com/docs/
 
