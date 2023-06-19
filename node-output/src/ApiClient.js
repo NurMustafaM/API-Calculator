@@ -1,6 +1,6 @@
 /*
- * home-iot-api
- * The API for the EatBacon IOT project
+ * Calculator API
+ * An API for performing basic arithmetic calculations
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -32,9 +32,9 @@ export class ApiClient {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://virtserver.swaggerhub.com/NORMOHAMAD/API-Calculator/1.0.0
+         * @default http://localhost:8080
          */
-        this.basePath = 'https://virtserver.swaggerhub.com/NORMOHAMAD/API-Calculator/1.0.0'.replace(/\/+$/, '');
+        this.basePath = 'http://localhost:8080'.replace(/\/+$/, '');
 
         /**
          * The authentication methods to be included for all API calls.

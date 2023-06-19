@@ -1,7 +1,7 @@
 {
-  "name": "home_iot_api",
+  "name": "calculator_api",
   "version": "1.0.0",
-  "description": "The_API_for_the_EatBacon_IOT_project",
+  "description": "An_API_for_performing_basic_arithmetic_calculations",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {

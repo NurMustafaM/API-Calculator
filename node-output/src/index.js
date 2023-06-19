@@ -1,6 +1,6 @@
 /*
- * home-iot-api
- * The API for the EatBacon IOT project
+ * Calculator API
+ * An API for performing basic arithmetic calculations
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -13,35 +13,22 @@
  *
  */
 import {ApiClient} from './ApiClient';
-import {ApiResponse} from './model/ApiResponse';
-import {City} from './model/City';
-import {DeviceRegistrationInfo} from './model/DeviceRegistrationInfo';
-import {DeviceState} from './model/DeviceState';
-import {Forecast} from './model/Forecast';
-import {ForecastResponse} from './model/ForecastResponse';
-import {ForecastTemperature} from './model/ForecastTemperature';
-import {HeaterState} from './model/HeaterState';
-import {LightingSummary} from './model/LightingSummary';
-import {LightingZone} from './model/LightingZone';
-import {LightingZoneStatus} from './model/LightingZoneStatus';
-import {TemperatueZoneStatus} from './model/TemperatueZoneStatus';
-import {TemperatureSummary} from './model/TemperatureSummary';
-import {TemperatureZone} from './model/TemperatureZone';
-import {WeatherForecast} from './model/WeatherForecast';
-import {DeviceApi} from './api/DeviceApi';
-import {EnvironmentApi} from './api/EnvironmentApi';
-import {ZWaveApi} from './api/ZWaveApi';
-import {ZonesApi} from './api/ZonesApi';
+import {InlineResponse200} from './model/InlineResponse200';
+import {InlineResponse2001} from './model/InlineResponse2001';
+import {InlineResponse2002} from './model/InlineResponse2002';
+import {InlineResponse2003} from './model/InlineResponse2003';
+import {InlineResponse2004} from './model/InlineResponse2004';
+import {DefaultApi} from './api/DefaultApi';
 
 /**
-* The_API_for_the_EatBacon_IOT_project.<br>
+* An_API_for_performing_basic_arithmetic_calculations.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var HomeIotApi = require('index'); // See note below*.
-* var xxxSvc = new HomeIotApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new HomeIotApi.Yyy(); // Construct a model instance.
+* var CalculatorApi = require('index'); // See note below*.
+* var xxxSvc = new CalculatorApi.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new CalculatorApi.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -53,8 +40,8 @@ import {ZonesApi} from './api/ZonesApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new HomeIotApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new HomeIotApi.Yyy(); // Construct a model instance.
+* var xxxSvc = new CalculatorApi.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new CalculatorApi.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -72,116 +59,38 @@ export {
     ApiClient,
 
     /**
-     * The ApiResponse model constructor.
-     * @property {module:model/ApiResponse}
+     * The InlineResponse200 model constructor.
+     * @property {module:model/InlineResponse200}
      */
-    ApiResponse,
+    InlineResponse200,
 
     /**
-     * The City model constructor.
-     * @property {module:model/City}
+     * The InlineResponse2001 model constructor.
+     * @property {module:model/InlineResponse2001}
      */
-    City,
+    InlineResponse2001,
 
     /**
-     * The DeviceRegistrationInfo model constructor.
-     * @property {module:model/DeviceRegistrationInfo}
+     * The InlineResponse2002 model constructor.
+     * @property {module:model/InlineResponse2002}
      */
-    DeviceRegistrationInfo,
+    InlineResponse2002,
 
     /**
-     * The DeviceState model constructor.
-     * @property {module:model/DeviceState}
+     * The InlineResponse2003 model constructor.
+     * @property {module:model/InlineResponse2003}
      */
-    DeviceState,
+    InlineResponse2003,
 
     /**
-     * The Forecast model constructor.
-     * @property {module:model/Forecast}
+     * The InlineResponse2004 model constructor.
+     * @property {module:model/InlineResponse2004}
      */
-    Forecast,
+    InlineResponse2004,
 
     /**
-     * The ForecastResponse model constructor.
-     * @property {module:model/ForecastResponse}
-     */
-    ForecastResponse,
-
-    /**
-     * The ForecastTemperature model constructor.
-     * @property {module:model/ForecastTemperature}
-     */
-    ForecastTemperature,
-
-    /**
-     * The HeaterState model constructor.
-     * @property {module:model/HeaterState}
-     */
-    HeaterState,
-
-    /**
-     * The LightingSummary model constructor.
-     * @property {module:model/LightingSummary}
-     */
-    LightingSummary,
-
-    /**
-     * The LightingZone model constructor.
-     * @property {module:model/LightingZone}
-     */
-    LightingZone,
-
-    /**
-     * The LightingZoneStatus model constructor.
-     * @property {module:model/LightingZoneStatus}
-     */
-    LightingZoneStatus,
-
-    /**
-     * The TemperatueZoneStatus model constructor.
-     * @property {module:model/TemperatueZoneStatus}
-     */
-    TemperatueZoneStatus,
-
-    /**
-     * The TemperatureSummary model constructor.
-     * @property {module:model/TemperatureSummary}
-     */
-    TemperatureSummary,
-
-    /**
-     * The TemperatureZone model constructor.
-     * @property {module:model/TemperatureZone}
-     */
-    TemperatureZone,
-
-    /**
-     * The WeatherForecast model constructor.
-     * @property {module:model/WeatherForecast}
-     */
-    WeatherForecast,
-
-    /**
-    * The DeviceApi service constructor.
-    * @property {module:api/DeviceApi}
+    * The DefaultApi service constructor.
+    * @property {module:api/DefaultApi}
     */
-    DeviceApi,
-
-    /**
-    * The EnvironmentApi service constructor.
-    * @property {module:api/EnvironmentApi}
-    */
-    EnvironmentApi,
-
-    /**
-    * The ZWaveApi service constructor.
-    * @property {module:api/ZWaveApi}
-    */
-    ZWaveApi,
-
-    /**
-    * The ZonesApi service constructor.
-    * @property {module:api/ZonesApi}
-    */
-    ZonesApi
+    DefaultApi
 };
