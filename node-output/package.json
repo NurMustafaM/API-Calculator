@@ -1,7 +1,7 @@
 {
   "name": "calculator_api",
   "version": "1.0.0",
-  "description": "An_API_for_performing_basic_arithmetic_calculations",
+  "description": "An_API_for_performing_basic_arithmetic_calculations_",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {

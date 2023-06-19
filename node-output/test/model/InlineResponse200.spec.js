@@ -1,6 +1,6 @@
 /*
  * Calculator API
- * An API for performing basic arithmetic calculations
+ * An API for performing basic arithmetic calculations.
  *
  * OpenAPI spec version: 1.0.0
  *
