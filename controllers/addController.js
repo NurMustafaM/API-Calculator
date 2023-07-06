@@ -1,22 +1,21 @@
-const Add = require('../models/addModel');
+const addModel = require('../models/addModel');
 
-module.exports = async (req, res) => {
-  const a = parseFloat(req.params.a);
-  const b = parseFloat(req.params.b);
+module.exports = async (req, res, next) => {
+  const { a, b } = req.body;
 
-  if (isNaN(a) || isNaN(b)) {
+  if (isNaN(parseFloat(a)) || isNaN(parseFloat(b))) {
     return res.status(400).json({
       result: false,
-      message: 'DEU ERRO! O primeiro e o segundo operando deve ser um número'
+      message: 'Erro! O primeiro e o segundo operando devem ser números.'
     });
   }
 
   try {
-    const result = await Add.add(a, b);
+    const result = await addModel.add(parseFloat(a), parseFloat(b));
 
     res.json({
-      result: result,
-      message: "ok"
+      message: 'ok',
+      result: result.toString()
     });
   } catch (error) {
     res.status(500).json({
@@ -25,4 +24,3 @@ module.exports = async (req, res) => {
     });
   }
 };
-

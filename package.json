@@ -1,9 +1,10 @@
 {
-  "name": "api-mongodb",
+  "name": "api-calculator",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "An API for performing basic arithmetic calculations",
+  "main": "app.js",
   "scripts": {
+    "swagger-generate": "mkdir -p swagger && node swagger.js",
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,11 +13,17 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "mongodb": "^5.4.0",
-    "mongoose": "^7.1.1"
+    "mongoose": "^7.1.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-tools": "^0.10.1",
+    "swagger-ui-express": "^4.6.3"
   },
+  "homepage": "https://github.com/NurMustafaM/API-Calculator/tree/main#readme",
   "devDependencies": {
-    "eslint": "^8.40.0"
+    "nodemon": "^1.14.9",
+    "swagger-autogen": "^2.23.4"
   }
 }
