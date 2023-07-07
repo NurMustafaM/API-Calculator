@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./routes/routes');
+const router = express.Router();
 const cors = require('cors');
 
 const app = express();
@@ -29,4 +30,4 @@ app.use((req, res, next) => {
 
 app.listen(port, () => console.log(`Calculadora iniciou, você pode conferir através http://localhost:${port}`));
 
-module.export = app;
+module.export = router;
