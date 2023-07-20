@@ -1,4 +1,4 @@
-const Divide = require("../models/divideModel");
+const Divide = require('../models/divideModel');
 
 module.exports = async (req, res) => {
   const a = parseFloat(req.params.a);
@@ -10,6 +10,7 @@ module.exports = async (req, res) => {
       message: "DEU ERRO! O primeiro e o segundo operando deve ser um número",
     });
   }
+
 let result;
   try {
     const result = await Divide.divide(a, b);
@@ -22,6 +23,7 @@ let result;
       result: result,
       message: "ok"
     });
+
   } catch (error) {
     if (error.message === "Infinity") {
       return res.status(400).json({
@@ -29,6 +31,7 @@ let result;
         message: `DEU ERRO! O resultado da divisão é ${result}`,
       });
       
+
     }
     res.status(500).json({
       result: false,
@@ -36,4 +39,3 @@ let result;
     });
   }
 };
-

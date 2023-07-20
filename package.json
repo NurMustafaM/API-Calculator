@@ -6,7 +6,9 @@
   "scripts": {
     "swagger-generate": "mkdir -p swagger && node swagger.js",
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run swagger-generate && node app.js",
+    "production": "npm run swagger-generate && node app.js"
+
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
     "express": "^4.18.2",
     "mongodb": "^5.4.0",
     "mongoose": "^7.1.1",
+    "readline-sync": "^1.4.10",
     "swagger-jsdoc": "^6.2.8",
     "swagger-tools": "^0.10.1",
     "swagger-ui-express": "^4.6.3"

@@ -1,0 +1,148 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API-Calculator",
+    "version": "2.0",
+    "description": "API for performing basic arithmetic calculations"
+  },
+  "host": "localhost:8080",
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Local development server"
+    },
+    {
+      "url": "https://api.example.com",
+      "description": "Production server"
+    }
+  ],
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/add": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "example": "any"
+                },
+                "b": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/divide/{a}/{b}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "a",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "b",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/multiply/{a}/{b}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "a",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "b",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/subtract/{a}/{b}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "a",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "b",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}

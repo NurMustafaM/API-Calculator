@@ -12,21 +12,21 @@ app.use(cors());
 
 app.get('/', (req, res) => {
   const routes = [
-    { method: 'POST', path: '/add', description: 'Rota para adicionar dois números' },
-    { method: 'GET', path: '/subtract/:a/:b', description: 'Rota para subtrair dois números' },
-    { method: 'GET', path: '/multiply/:a/:b', description: 'Rota para multiplicar dois números' },
-    { method: 'GET', path: '/divide/:a/:b', description: 'Rota para dividir dois números' },
+    { method: 'POST', path: '/add', description: 'Route to add two numbers' },
+    { method: 'GET', path: '/subtract/:a/:b', description: 'Route to substract two numbers' },
+    { method: 'GET', path: '/multiply/:a/:b', description: 'Route to multiply two numbers' },
+    { method: 'GET', path: '/divide/:a/:b', description: 'Route to divide two numbers' },
   ];
 
-  res.json({ message: 'Oi! Você está acessando uma calculadora API', routes });
+  res.json({ message: 'Hey! You are acessing an API calculator', routes });
 });
 
 app.use(routes);
 
 app.use((req, res, next) => {
-  res.status(404).json({ result: false, message: `Rota não encontrada: ${req.url}. Tente as rotas válidas: /add, /subtract/:a/:b, /multiply/:a/:b, /divide/:a/:b` });
+  res.status(404).json({ result: false, message: `Route not found: ${req.url}. Try valid routes: /add, /subtract/:a/:b, /multiply/:a/:b, /divide/:a/:b` });
 });
 
-app.listen(port, () => console.log(`Calculadora iniciou, você pode conferir através http://localhost:${port}`));
+app.listen(port, () => console.log(`Calculator started, you can check through http://localhost:${port}`));
 
-module.export = app;
+module.exports = app;
