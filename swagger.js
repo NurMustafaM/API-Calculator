@@ -3,14 +3,14 @@ const fs = require('fs');
 const endpointsFiles = ["./routes/routes.js"];
 
 const swaggerOutputDir = "./swagger";
-const swaggerOutputFileName = "swagger_output.json"; // Corrigir a string e adicionar aspas ao redor do nome do arquivo
+const swaggerOutputFileName = "swagger_output.json";
 const swaggerOutputFile = `${swaggerOutputDir}/${swaggerOutputFileName}`;
 
-// Adicionar a variável para controlar a autonomia de subir novas modificações
+
 const autonomousUpload = true; // Defina como 'true' para habilitar ou 'false' para desabilitar
 
 function generateSwagger(endpointsFiles, autonomousUpload) {
-  // Verificar a variável 'autonomousUpload' para decidir se devemos gerar o arquivo Swagger ou não
+  
   if (!autonomousUpload) {
     console.log("Autonomous upload is disabled. Skipping Swagger JSON generation.");
     return;
