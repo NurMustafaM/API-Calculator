@@ -15,6 +15,8 @@ let swaggerDocument = {};
 
 const autonomousUpload = true; // Defina como 'true' para habilitar ou 'false' para desabilitar
 
+const endpointsFiles = ["./routes/routes.js"];
+
 function generateSwagger() {
   if (!autonomousUpload) {
     console.log("Autonomous upload is disabled. Skipping Swagger JSON generation.");
@@ -45,7 +47,7 @@ function generateSwagger() {
   swaggerAutogen(swaggerOutputFile, [endpointsFiles], doc)
     .then(() => {
       console.log("Swagger JSON file has been generated");
-      // Start the server and serve the Swagger UI after generating the Swagger JSON
+    
       startServer();
     })
     .catch((error) => {
@@ -63,7 +65,13 @@ function startServer() {
   }
 }
 
-generateSwagger(); // Start the process by generating the Swagger JSON
+generateSwagger(); 
+
+application.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+const server = application.listen(port, () => {
+  console.log(`Swagger UI is available at http://localhost:${server.address().port}/api-docs`);
+});
 
 function getDateFormatted() {
   const date = new Date();
