@@ -13,6 +13,7 @@ const swaggerOutputFile = `${swaggerOutputDir}/${swaggerOutputFileName}`;
 
 let swaggerDocument = {};
 
+
 const autonomousUpload = true; // Defina como 'true' para habilitar ou 'false' para desabilitar
 
 const endpointsFiles = ["./routes/routes.js"];
@@ -23,6 +24,10 @@ function generateSwagger() {
     return;
   }
 
+const endpointsFiles = ["./routes/routes.js"];
+
+
+function generateSwagger(endpointsFiles) {
   const doc = {
     swagger: "2.0",
     info: {
@@ -47,7 +52,7 @@ function generateSwagger() {
   swaggerAutogen(swaggerOutputFile, [endpointsFiles], doc)
     .then(() => {
       console.log("Swagger JSON file has been generated");
-    
+
       startServer();
     })
     .catch((error) => {
@@ -61,6 +66,7 @@ function startServer() {
     swaggerDocument = require(`./${swaggerOutputFile}`);
   } else {
     console.log(`Swagger file '${swaggerOutputFile}' does not exist. Generating new file...`);
+
     generateSwagger();
   }
 }
@@ -72,6 +78,18 @@ application.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 const server = application.listen(port, () => {
   console.log(`Swagger UI is available at http://localhost:${server.address().port}/api-docs`);
 });
+    generateSwagger(endpointsFiles);
+  }
+
+  application.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+  const server = application.listen(port, () => {
+    console.log(`Swagger UI is available at http://localhost:${server.address().port}/api-docs`);
+  });
+}
+
+generateSwagger(endpointsFiles); // Start the process by generating the Swagger JSON
+
 
 function getDateFormatted() {
   const date = new Date();
