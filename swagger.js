@@ -7,10 +7,10 @@ const swaggerOutputFileName = "swagger_output.json";
 const swaggerOutputFile = `${swaggerOutputDir}/${swaggerOutputFileName}`;
 
 
-const autonomousUpload = true; // Defina como 'true' para habilitar ou 'false' para desabilitar
+const autonomousUpload = false; // Defina como 'true' para habilitar ou 'false' para desabilitar
 
 function generateSwagger(endpointsFiles, autonomousUpload) {
-  
+
   if (!autonomousUpload) {
     console.log("Autonomous upload is disabled. Skipping Swagger JSON generation.");
     return;
