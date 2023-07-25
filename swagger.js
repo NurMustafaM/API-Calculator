@@ -16,6 +16,10 @@ function generateSwagger(endpointsFiles, autonomousUpload) {
     return;
   }
 
+const endpointsFiles = ["./routes/routes.js"];
+
+
+function generateSwagger(endpointsFiles) {
   const doc = {
     swagger: "2.0",
     info: {
