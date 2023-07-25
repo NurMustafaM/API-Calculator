@@ -13,7 +13,7 @@ const swaggerOutputFile = `${swaggerOutputDir}/${swaggerOutputFileName}`;
 
 let swaggerDocument = {};
 
-const autonomousUpload = false; // Defina como 'true' para habilitar ou 'false' para desabilitar
+const autonomousUpload = true; // Defina como 'true' para habilitar ou 'false' para desabilitar
 
 function generateSwagger() {
   if (!autonomousUpload) {
