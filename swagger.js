@@ -1,25 +1,20 @@
 const swaggerAutogen = require("swagger-autogen")();
 const fs = require('fs');
+
 const endpointsFiles = ["./routes/routes.js"];
 
+const autonomousUpload = false; // Defina como 'true' para habilitar ou 'false' para desabilitar
+
 const swaggerOutputDir = "./swagger";
-const swaggerOutputFileName = "swagger_output.json"; 
+const swaggerOutputFileName = `swagger_output${autonomousUpload ? `_${getDateFormatted()}` : ''}.json`; // Include the date for old versions only
 const swaggerOutputFile = `${swaggerOutputDir}/${swaggerOutputFileName}`;
 
-
-const autonomousUpload = true; // Defina como 'true' para habilitar ou 'false' para desabilitar
-
 function generateSwagger(endpointsFiles, autonomousUpload) {
- 
   if (!autonomousUpload) {
     console.log("Autonomous upload is disabled. Skipping Swagger JSON generation.");
     return;
   }
 
-const endpointsFiles = ["./routes/routes.js"];
-
-
-function generateSwagger(endpointsFiles) {
   const doc = {
     swagger: "2.0",
     info: {
@@ -50,13 +45,15 @@ function generateSwagger(endpointsFiles) {
     });
 }
 
-generateSwagger(endpointsFiles, autonomousUpload); 
-
 function getDateFormatted() {
   const date = new Date();
   const year = date.getFullYear();
   const month = (date.getMonth() + 1).toString().padStart(2, '0');
   const day = date.getDate().toString().padStart(2, '0');
-  return `${day}${month}${year}`;
+  return `${day}_${month}_${year}`;
 }
-}
+
+generateSwagger(endpointsFiles, autonomousUpload);
+
+
+

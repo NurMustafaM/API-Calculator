@@ -4,8 +4,8 @@
   "description": "An API for performing basic arithmetic calculations",
   "main": "app.js",
   "scripts": {
-    "swagger-generate": "mkdir -p swagger && node swagger.js",
     "start": "node app.js",
+    "swagger-generate": "mkdir -p swagger && node swagger.js",
     "dev": "npm run swagger-generate && node app.js",
     "production": "npm run swagger-generate && node app.js"
 
