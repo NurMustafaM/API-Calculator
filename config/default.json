@@ -1,0 +1,10 @@
+{
+    "swagger":{
+        "generatefile": true,
+        "getDateFormatted": true
+    },
+    "server": {
+        "port": 8080,
+        "timeout": 120000 
+    }
+}

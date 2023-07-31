@@ -1,0 +1,7 @@
+# Ignore old Swagger files without date in filename
+/swagger/swagger_output.json
+/swagger/swagger_output_*.json
+
+#ignore node_modules
+
+/node_modules

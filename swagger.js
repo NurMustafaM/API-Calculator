@@ -1,12 +1,14 @@
 const swaggerAutogen = require("swagger-autogen")();
 const fs = require('fs');
+const config = require ('./config/default.json');
 
 const endpointsFiles = ["./routes/routes.js"];
 
-const autonomousUpload = false; // Defina como 'true' para habilitar ou 'false' para desabilitar
+const autonomousUpload = config.swagger.generatefile;
+const includeDate = config.swagger.getDateFormatted; 
 
 const swaggerOutputDir = "./swagger";
-const swaggerOutputFileName = `swagger_output${autonomousUpload ? `_${getDateFormatted()}` : ''}.json`; // Include the date for old versions only
+const swaggerOutputFileName = `swagger_output${autonomousUpload && includeDate ? `_${getDateFormatted()}` : ''}.json`; // Include the date if both flags are true
 const swaggerOutputFile = `${swaggerOutputDir}/${swaggerOutputFileName}`;
 
 function generateSwagger(endpointsFiles, autonomousUpload) {
@@ -54,6 +56,3 @@ function getDateFormatted() {
 }
 
 generateSwagger(endpointsFiles, autonomousUpload);
-
-
-

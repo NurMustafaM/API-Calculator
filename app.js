@@ -4,12 +4,13 @@ const routes = require('./routes/routes');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const fs = require('fs');
+const config = require ('./config/default.json');
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const port = 8080;
+const port = config.server.port;
 
 // Function to check if the Swagger JSON file exists
 function checkSwaggerFile() {
