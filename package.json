@@ -8,13 +8,13 @@
     "swagger-generate": "mkdir -p swagger && node swagger.js",
     "dev": "npm run swagger-generate && node app.js",
     "production": "npm run swagger-generate && node app.js"
-
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "config": "^3.3.9",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "mongodb": "^5.4.0",
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/NurMustafaM/API-Calculator/tree/main#readme",
   "devDependencies": {
-    "nodemon": "^1.14.9",
+    "nodemon": "^3.0.1",
     "swagger-autogen": "^2.23.4"
   }
 }
